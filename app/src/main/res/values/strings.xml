@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MultiPlexer</string>
+    <string name="txtIntroduce">" Lorem Ipsum is simply dummy text of the printing and typesetting industry. make a type specimen book."</string>
+    <string name="txtAggrement">" By Signing up,you agree to Arcedia's Terms and Conditions."</string>
+</resources>
