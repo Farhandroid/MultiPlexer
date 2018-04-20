@@ -1,9 +1,9 @@
 package tanvir.multiplexer;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
@@ -24,9 +24,18 @@ public class HomePage extends AppCompatActivity {
     private RecyclerView recyclerViewForJapitoJibon;
     public RecyclerAdapterForJapitoJibon adapterForJapitoJibon;
 
+    private RecyclerView recyclerViewForMulloChar;
+    public RecyclerAdapterForMulloChar adapterForMulloChar;
+
+    private RecyclerView recyclerViewForShikkhaSohayika;
+    public RecyclerAdapterForShikkhaSohayika adapterForShikkhaSohayika;
+
+    private RecyclerView recyclerViewForShocolChobi;
+    public RecyclerAdapterForShocolChobi adapterForShocolChobi;
 
 
-    private LinearLayoutManager layoutManager;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +66,6 @@ public class HomePage extends AppCompatActivity {
 
 
 
-
-
-
         //Recyclerview for japito jibon
 
 
@@ -76,6 +82,52 @@ public class HomePage extends AppCompatActivity {
 
         recyclerViewForJapitoJibon.setAdapter(adapterForJapitoJibon);
 
+        //Recyclerview for mullochar
+
+        recyclerViewForMulloChar= findViewById(R.id.RV_mulloChar);
+
+        recyclerViewForMulloChar.setLayoutManager(new LinearLayoutManager(this,
+                LinearLayoutManager.HORIZONTAL, false));
+
+        SnapHelper snapHelperStartMulloChar = new GravitySnapHelper(Gravity.START);
+        snapHelperStartMulloChar.attachToRecyclerView(recyclerViewForMulloChar);
+
+        recyclerViewForMulloChar.setHasFixedSize(true);
+        adapterForMulloChar = new RecyclerAdapterForMulloChar(this);
+
+        recyclerViewForMulloChar.setAdapter(adapterForMulloChar);
+
+
+        //Recyclerview for ShikkhaSohayika
+
+        recyclerViewForShikkhaSohayika= findViewById(R.id.RV_ShikkhaSohayika);
+
+        recyclerViewForShikkhaSohayika.setLayoutManager(new LinearLayoutManager(this,
+                LinearLayoutManager.VERTICAL, false));
+
+        SnapHelper snapHelperStartShikkhaSohayika= new GravitySnapHelper(Gravity.START);
+        snapHelperStartShikkhaSohayika.attachToRecyclerView(recyclerViewForShikkhaSohayika);
+
+        recyclerViewForShikkhaSohayika.setHasFixedSize(true);
+        adapterForShikkhaSohayika = new RecyclerAdapterForShikkhaSohayika(this);
+
+        recyclerViewForShikkhaSohayika.setAdapter(adapterForShikkhaSohayika);
+
+        //Recyclerview for ShocholChobi
+
+        recyclerViewForShocolChobi= findViewById(R.id.RV_ShocolChobi);
+
+        recyclerViewForShocolChobi.setLayoutManager(new LinearLayoutManager(this,
+                LinearLayoutManager.HORIZONTAL, false));
+
+        SnapHelper snapHelperStartShocolChobi= new GravitySnapHelper(Gravity.START);
+        snapHelperStartShocolChobi.attachToRecyclerView(recyclerViewForShocolChobi);
+
+        recyclerViewForShocolChobi.setHasFixedSize(true);
+        adapterForShocolChobi = new RecyclerAdapterForShocolChobi(this);
+
+        recyclerViewForShocolChobi.setAdapter(adapterForShocolChobi);
+
 
 
     }
@@ -87,5 +139,17 @@ public class HomePage extends AppCompatActivity {
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
         finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
+        myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        this.startActivity(myIntent);
+        overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        finish();
+
     }
 }

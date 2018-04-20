@@ -10,8 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".HomePage"
-            android:theme="@style/AppThemeMainActivity">
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +20,8 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SignUp2" />
         <activity android:name=".PinActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".HomePage"
+            android:theme="@style/AppThemeMainActivity"/>
         <activity android:name=".SignInActivity" />
         <activity android:name=".ForgetPasswordActivity"></activity>
     </application>

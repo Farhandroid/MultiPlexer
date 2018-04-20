@@ -14,12 +14,13 @@
        android:layout_height="wrap_content">
 
        <ImageView
+           android:layout_gravity="center"
            android:onClick="startLoginActivity"
            android:textColor="#FFFFFF"
            android:textSize="20sp"
            android:src="@drawable/ic_action_person"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content" />
+           android:layout_width="30dp"
+           android:layout_height="30dp" />
 
        <TextView
            android:textSize="18sp"
@@ -30,10 +31,12 @@
            android:layout_height="wrap_content" />
 
        <ImageView
+           android:padding="2dp"
+           android:layout_gravity="center"
            android:layout_marginLeft="170dp"
            android:src="@drawable/ic_action_search"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content" />
+           android:layout_width="30dp"
+           android:layout_height="30dp" />
    </LinearLayout>
 
 

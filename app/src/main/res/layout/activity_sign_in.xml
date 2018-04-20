@@ -73,6 +73,7 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
+                android:onClick="startHomePage"
                 android:id="@+id/btn_email_sign_in_"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

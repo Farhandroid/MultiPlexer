@@ -9,7 +9,8 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbarLayout"
@@ -69,7 +70,7 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_action_person" />
+                            android:src="@drawable/fire" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -93,7 +94,7 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_action_person" />
+                            android:src="@drawable/ball" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -117,7 +118,7 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_action_person" />
+                            android:src="@drawable/book" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -141,7 +142,7 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_action_person" />
+                            android:src="@drawable/mask" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -174,7 +175,7 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_action_person" />
+                            android:src="@drawable/flower" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -198,7 +199,7 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_action_person" />
+                            android:src="@drawable/mask" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -222,13 +223,13 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_action_person" />
+                            android:src="@drawable/science" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="গরম খবর" />
+                            android:text="বিজ্ঞান" />
 
 
                     </LinearLayout>
@@ -246,13 +247,13 @@
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:layout_gravity="center"
-                            android:src="@drawable/ic_action_person" />
+                            android:src="@drawable/cartoon" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text="গরম খবর" />
+                            android:text="কার্টুন" />
 
 
                     </LinearLayout>
@@ -411,9 +412,121 @@
             </RelativeLayout>
 
 
+            <ImageView
+                android:scaleType="centerCrop"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ad"
+                android:layout_width="match_parent"
+                android:layout_height="180dp" />
+
+
+            <!--  Shikkha sohayika -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/White">
+
+                <TextView
+                    android:id="@+id/ShikkhaSohayikaTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="শিক্ষা সহায়িকা"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="সাবস্ক্রাইব করুন"
+                    android:textColor="@color/red"
+                    android:textSize="17sp" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:background="@color/White"
+                    android:id="@+id/RV_ShikkhaSohayika"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@id/ShikkhaSohayikaTV"
+                    android:layout_marginTop="10dp"
+                    android:nestedScrollingEnabled="false">
+
+
+                </android.support.v7.widget.RecyclerView>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="17sp"
+                    android:textColor="@color/red"
+                    android:layout_below="@id/RV_ShikkhaSohayika"
+                    android:text="আরো পড়ুন"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </RelativeLayout>
+
+            <!-- Shocol chobi -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/White">
+
+                <TextView
+                    android:id="@+id/shocolChobiTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="সচল ছবি"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="আরো দেখুন"
+                    android:textColor="@color/red"
+                    android:textSize="17sp" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/RV_ShocolChobi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shocolChobiTV"
+                    android:layout_marginTop="10dp"
+                    android:nestedScrollingEnabled="false">
+
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </RelativeLayout>
+
+
+
 
 
         </LinearLayout>
+
 
 
     </android.support.constraint.ConstraintLayout>

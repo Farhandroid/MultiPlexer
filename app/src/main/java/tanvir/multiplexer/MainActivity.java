@@ -41,15 +41,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
 
-        Intent myIntent = new Intent(getApplicationContext(), HomePage.class);
-        myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-        this.startActivity(myIntent);
-        overridePendingTransition(R.anim.left_in, R.anim.left_out);
-        finish();
-
-    }
 }

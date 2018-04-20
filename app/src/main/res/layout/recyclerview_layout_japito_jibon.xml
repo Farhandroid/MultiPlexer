@@ -66,7 +66,7 @@
                         android:layout_gravity="center"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:src="@drawable/ic_action_eye" />
+                        android:src="@drawable/ic_action_heart" />
                     <TextView
                         android:layout_gravity="center"
                         android:text="১১৪"
@@ -86,7 +86,7 @@
                         android:layout_gravity="center"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:src="@drawable/ic_action_eye" />
+                        android:src="@drawable/ic_action_forward" />
                     <TextView
                         android:layout_gravity="center"
                         android:text="৪৪"
