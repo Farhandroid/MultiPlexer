@@ -1,9 +1,422 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Halka_Gray"
     tools:context=".HomePage">
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:fitsSystemWindows="true">
+
+
+            <include
+                android:id="@+id/toolbarlayoutinhome_page"
+                layout="@layout/toolbar_layout_in_homepage" />
+
+
+        </android.support.design.widget.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:orientation="vertical">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="fill_parent"
+                android:layout_height="300dp"
+                android:layout_alignParentTop="true" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/Halka_Gray"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <!-- gorom khobor start -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@color/Halka_Gray"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/item_width_home_page"
+                        android:layout_height="@dimen/item_hight_home_page"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/White"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_action_person" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="গরম খবর" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/item_width_home_page"
+                        android:layout_height="@dimen/item_hight_home_page"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/White"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_action_person" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="খেলাধুলা" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/item_width_home_page"
+                        android:layout_height="@dimen/item_hight_home_page"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/White"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_action_person" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="পড়াশুনা" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/item_width_home_page"
+                        android:layout_height="@dimen/item_hight_home_page"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/White"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_action_person" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="অট্টহাসি" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/Halka_Gray"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/item_width_home_page"
+                        android:layout_height="@dimen/item_hight_home_page"
+                        android:layout_marginTop="2dp"
+                        android:background="@color/White"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_action_person" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="জীবনযাপন" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/item_width_home_page"
+                        android:layout_height="@dimen/item_hight_home_page"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@color/White"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_action_person" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="পাচমিশালি" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/item_width_home_page"
+                        android:layout_height="@dimen/item_hight_home_page"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@color/White"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_action_person" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="গরম খবর" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/item_width_home_page"
+                        android:layout_height="@dimen/item_hight_home_page"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@color/White"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_action_person" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="গরম খবর" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!-- Sera chobi er layout -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/White">
+
+                <TextView
+                    android:id="@+id/seraChobiTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="সেরা ছবি"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="আরো দেখুন"
+                    android:textColor="@color/red"
+                    android:textSize="17sp" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/RV_SeraChobi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/seraChobiTV"
+                    android:layout_marginTop="10dp"
+                    android:nestedScrollingEnabled="false">
+
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </RelativeLayout>
+
+
+            <!-- japito jibon -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/White">
+
+                <TextView
+                    android:id="@+id/japitoJibonTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="যাপিত জীবন"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="সাবস্ক্রাইব করুন"
+                    android:textColor="@color/red"
+                    android:textSize="17sp" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:background="@color/White"
+                    android:id="@+id/RV_japitoJibon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@id/japitoJibonTV"
+                    android:layout_marginTop="10dp"
+                    android:nestedScrollingEnabled="false">
+
+
+                </android.support.v7.widget.RecyclerView>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="17sp"
+                    android:textColor="@color/red"
+                    android:layout_below="@id/RV_japitoJibon"
+                    android:text="আরো পড়ুন"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </RelativeLayout>
+
+
+            <!-- Mullo char -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/White">
+
+                <TextView
+                    android:id="@+id/mulloCharTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="মুল্য ছাড়"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="8dp"
+                    android:text="আরো দেখুন"
+                    android:textColor="@color/red"
+                    android:textSize="17sp" />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/RV_mulloChar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mulloCharTV"
+                    android:layout_marginTop="10dp"
+                    android:nestedScrollingEnabled="false">
+
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</ScrollView>

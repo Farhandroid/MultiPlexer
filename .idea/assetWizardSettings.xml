@@ -19,8 +19,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\USER\Desktop\Multiplexer_design\phone-receiver.png" />
-                                      <entry key="outputName" value="ic_action_phone" />
+                                      <entry key="imageAsset" value="C:\Users\USER\Desktop\Multiplexer_design\forward-arrow.png" />
+                                      <entry key="outputName" value="ic_action_forward" />
                                     </map>
                                   </option>
                                 </PersistentState>
