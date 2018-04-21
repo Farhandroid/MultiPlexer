@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SignUp2">
+    tools:context=".Activity.SignUp2">
 
 
     <android.support.design.widget.AppBarLayout
@@ -40,8 +40,9 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:paddingTop="10dp"
+            android:textSize="17sp"
             android:singleLine="false"
-            android:text="@string/txtIntroduce"
+            android:text="দারুন ! আমরা সর্বশেষ ধাপে এসে গেছি। আপনার \n প্রোফাইল এর জন্যে তথ্য দিন"
             android:textColor="@color/Gray" />
 
 
@@ -111,8 +112,9 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="6dp"
+                android:textColor="@color/White"
                 android:background="@drawable/btn_style_red"
-                android:text="Sign Up" />
+                android:text="সাইন আপ সম্পন্ন করুন" />
         </LinearLayout>
 
         <TextView
@@ -122,6 +124,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:paddingTop="20dp"
+            android:textSize="@dimen/textSize"
             android:singleLine="false"
             android:text="@string/txtAggrement"
             android:textColor="@color/Gray" />

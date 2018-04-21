@@ -9,21 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity">
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".SignUp2" />
-        <activity android:name=".PinActivity" />
-        <activity android:name=".HomePage"
-            android:theme="@style/AppThemeMainActivity"/>
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".ForgetPasswordActivity"></activity>
+        <activity android:name=".Activity.SignUpActivity" />
+        <activity android:name=".Activity.SignUp2" />
+        <activity android:name=".Activity.PinActivity" />
+        <activity
+            android:name=".Activity.HomePage"
+            android:theme="@style/AppThemeMainActivity" />
+        <activity android:name=".Activity.SignInActivity" />
+        <activity android:name=".Activity.ForgetPasswordActivity" />
+        <activity android:name=".Activity.Sports" />
+        <activity android:name=".Activity.WallpaperBundleActivity"></activity>
     </application>
 
 </manifest>

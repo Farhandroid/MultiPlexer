@@ -1,4 +1,4 @@
-package tanvir.multiplexer;
+package tanvir.multiplexer.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,17 @@ import android.view.Gravity;
 import android.view.View;
 
 import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
+import com.viewpagerindicator.CirclePageIndicator;
+
+import java.util.ArrayList;
+
+import tanvir.multiplexer.CustomSwipeAdapter;
+import tanvir.multiplexer.R;
+import tanvir.multiplexer.RecycleerViewAdapter.RecyclerAdapterForJapitoJibon;
+import tanvir.multiplexer.RecycleerViewAdapter.RecyclerAdapterForMulloChar;
+import tanvir.multiplexer.RecycleerViewAdapter.RecyclerAdapterForSeraChobi;
+import tanvir.multiplexer.RecycleerViewAdapter.RecyclerAdapterForShikkhaSohayika;
+import tanvir.multiplexer.RecycleerViewAdapter.RecyclerAdapterForShocolChobi;
 
 public class HomePage extends AppCompatActivity {
 
@@ -48,6 +59,13 @@ public class HomePage extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
         customSwipeAdapter =new CustomSwipeAdapter(this);
         viewPager.setAdapter(customSwipeAdapter);
+        CirclePageIndicator indicator = findViewById(R.id.indicator);
+
+        indicator.setViewPager(viewPager);
+
+        final float density = getResources().getDisplayMetrics().density;
+
+        indicator.setRadius(5 * density);
 
 
 
@@ -84,6 +102,11 @@ public class HomePage extends AppCompatActivity {
 
         //Recyclerview for mullochar
 
+         ArrayList<String> mulloCharData=new ArrayList<>();
+        mulloCharData.add("স্মার্ট থীম প্যাক");
+        mulloCharData.add("এক্সক্লুসিভ গান ");
+        mulloCharData.add("লাইভ কনসার্ট");
+
         recyclerViewForMulloChar= findViewById(R.id.RV_mulloChar);
 
         recyclerViewForMulloChar.setLayoutManager(new LinearLayoutManager(this,
@@ -93,12 +116,16 @@ public class HomePage extends AppCompatActivity {
         snapHelperStartMulloChar.attachToRecyclerView(recyclerViewForMulloChar);
 
         recyclerViewForMulloChar.setHasFixedSize(true);
-        adapterForMulloChar = new RecyclerAdapterForMulloChar(this);
+        adapterForMulloChar = new RecyclerAdapterForMulloChar(this,mulloCharData);
 
         recyclerViewForMulloChar.setAdapter(adapterForMulloChar);
 
 
         //Recyclerview for ShikkhaSohayika
+
+        ArrayList<String> shikkhaSohayikaData=new ArrayList<>();
+        shikkhaSohayikaData.add("পঞ্চম শ্রেনী সমাপনি পরীক্ষা প্রস্তুতি- পর্ব ৫");
+        shikkhaSohayikaData.add("পঞ্চম শ্রেনী সমাপনি পরীক্ষা প্রস্তুতি- পর্ব ৪");
 
         recyclerViewForShikkhaSohayika= findViewById(R.id.RV_ShikkhaSohayika);
 
@@ -109,7 +136,7 @@ public class HomePage extends AppCompatActivity {
         snapHelperStartShikkhaSohayika.attachToRecyclerView(recyclerViewForShikkhaSohayika);
 
         recyclerViewForShikkhaSohayika.setHasFixedSize(true);
-        adapterForShikkhaSohayika = new RecyclerAdapterForShikkhaSohayika(this);
+        adapterForShikkhaSohayika = new RecyclerAdapterForShikkhaSohayika(this,shikkhaSohayikaData);
 
         recyclerViewForShikkhaSohayika.setAdapter(adapterForShikkhaSohayika);
 
@@ -150,6 +177,17 @@ public class HomePage extends AppCompatActivity {
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
         finish();
+
+    }
+
+    public void startSportActivity(View view) {
+
+        Intent myIntent = new Intent(getApplicationContext(), Sports.class);
+        myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        this.startActivity(myIntent);
+        overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        finish();
+
 
     }
 }

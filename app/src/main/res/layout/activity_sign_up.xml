@@ -6,7 +6,7 @@
     android:orientation="vertical"
 
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".Activity.SignUpActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbarLayout"
@@ -38,9 +38,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-
+            android:textSize="17sp"
             android:singleLine="false"
-            android:text="@string/txtIntroduce"
+            android:text="@string/introductionInFirstsignUpPage"
             android:textColor="@color/Gray" />
 
 
@@ -79,7 +79,8 @@
                 android:onClick="startPinActivity"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="Next" />
+                android:textColor="@color/White"
+                android:text="নেক্সট" />
         </LinearLayout>
     </LinearLayout>
 

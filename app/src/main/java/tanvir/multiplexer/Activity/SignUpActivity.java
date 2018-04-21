@@ -1,18 +1,24 @@
-package tanvir.multiplexer;
+package tanvir.multiplexer.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class SignInActivity extends AppCompatActivity {
+import tanvir.multiplexer.R;
 
+public class SignUpActivity extends AppCompatActivity {
 
+    private android.support.v7.widget.Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.activity_sign_up);
+
+        toolbar = findViewById(R.id.toolbarlayoutinsign);
+        setSupportActionBar(toolbar);
+
 
     }
 
@@ -28,19 +34,18 @@ public class SignInActivity extends AppCompatActivity {
 
     }
 
-    public void startForgotPasswordActivity(View view) {
-
-        Intent myIntent = new Intent(getApplicationContext(), ForgetPasswordActivity.class);
+    public void startPinActivity(View view) {
+        Intent myIntent = new Intent(getApplicationContext(),PinActivity.class);
         myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
         finish();
-
     }
 
-    public void startHomePage(View view) {
+    public void main()
+    {
 
-        Intent myIntent = new Intent(getApplicationContext(), HomePage.class);
+        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
         myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.left_in, R.anim.left_out);

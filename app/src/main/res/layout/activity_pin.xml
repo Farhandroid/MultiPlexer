@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PinActivity">
+    tools:context=".Activity.PinActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbarLayout"
@@ -21,6 +21,15 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:text="আপনার নাম্বারে পাঠানো টেক্সট ম্যাসেজের ৪ ডিজিটের \n কোডটি লিখুন"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <com.goodiebag.pinview.Pinview
         android:layout_marginTop="60dp"
         android:id="@+id/pinview"
@@ -33,7 +42,7 @@
         app:cursorVisible="false"
         app:forceKeyboard="true"
         app:hint="0"
-        app:inputType="text"
+        app:inputType="number"
         app:password="false"/>
 
     <Button

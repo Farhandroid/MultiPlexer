@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
 
     <android.support.v7.widget.CardView
         android:id="@+id/cv"
@@ -26,19 +26,13 @@
 
             <ImageView
                 android:id="@+id/IV"
-                android:layout_width="wrap_content"
-                android:layout_height="72dp"
+                android:layout_width="210dp"
+                android:layout_height="75dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="64dp"
                 android:src="@drawable/symphoni" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Welcome"
-                android:textStyle="bold"
-                />
+
 
             <TextView
                 android:id="@+id/txtIntroduce"
@@ -69,7 +63,7 @@
                 android:textColor="@color/White"
                 android:layout_centerHorizontal="true"
                 android:layout_weight=".5"
-                android:text="Login" />
+                android:text="লগইন করুন" />
 
             <Button
                 android:onClick="startSignUpActivity"
@@ -81,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_weight=".5"
-                android:text="Sign up" />
+                android:text="সাইন আপ করুন" />
         </LinearLayout>
 
 

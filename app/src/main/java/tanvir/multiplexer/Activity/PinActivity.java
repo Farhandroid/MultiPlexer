@@ -1,4 +1,4 @@
-package tanvir.multiplexer;
+package tanvir.multiplexer.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.goodiebag.pinview.Pinview;
+
+import tanvir.multiplexer.R;
 
 public class PinActivity extends AppCompatActivity {
     Pinview pinview;

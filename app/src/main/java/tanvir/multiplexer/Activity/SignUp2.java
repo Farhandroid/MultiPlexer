@@ -1,15 +1,22 @@
-package tanvir.multiplexer;
+package tanvir.multiplexer.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ForgetPasswordActivity extends AppCompatActivity {
+import tanvir.multiplexer.R;
+
+public class SignUp2 extends AppCompatActivity {
+
+    private android.support.v7.widget.Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forget_password);
+        setContentView(R.layout.activity_sign_up2);
+
+        toolbar = findViewById(R.id.toolbarlayoutinmainactivity);
+        setSupportActionBar(toolbar);
     }
 
     @Override

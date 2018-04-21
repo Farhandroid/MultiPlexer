@@ -1,47 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolBar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="@color/Halka_Gray"
-    app:theme="@style/ThemeOverlay.AppCompat.Dark"
-    android:id="@+id/toolBar"
-    >
+    app:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-       <ImageView
-           android:layout_gravity="center"
-           android:onClick="startLoginActivity"
-           android:textColor="#FFFFFF"
-           android:textSize="20sp"
-           android:src="@drawable/ic_action_person"
-           android:layout_width="30dp"
-           android:layout_height="30dp" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_action_person"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
-       <TextView
-           android:textSize="18sp"
-           android:layout_gravity="center"
-           android:text="  Home page "
-           android:textColor="@color/colorPrimaryDark"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_marginLeft="45dp"
+            android:foregroundGravity="center"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/symphoni"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp" />
 
-       <ImageView
-           android:padding="2dp"
-           android:layout_gravity="center"
-           android:layout_marginLeft="170dp"
-           android:src="@drawable/ic_action_search"
-           android:layout_width="30dp"
-           android:layout_height="30dp" />
-   </LinearLayout>
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="45dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_action_search" />
 
+        <ImageView
+            android:padding="2dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/ic_action_notification"
+            android:layout_width="28dp"
+            android:layout_height="28dp" />
 
-
-
+    </LinearLayout>
 
 
 </android.support.v7.widget.Toolbar>

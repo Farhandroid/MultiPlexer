@@ -15,4 +15,16 @@
         <item name="colorAccent">@color/Halka_Gray</item>
     </style>
 
+    <style name="TabLayoutTheme">
+        <item name="colorAccent">@color/red</item>
+        <item name="colorPrimaryDark">@color/White</item>
+
+    </style>
+
+    <style name="viewPagerInSportsTheme">
+        <item name="colorAccent">@color/red</item>
+        <item name="colorPrimaryDark">@color/White</item>
+
+    </style>
+
 </resources>

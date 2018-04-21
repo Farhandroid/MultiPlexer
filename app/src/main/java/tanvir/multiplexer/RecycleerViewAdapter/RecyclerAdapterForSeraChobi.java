@@ -1,4 +1,4 @@
-package tanvir.multiplexer;
+package tanvir.multiplexer.RecycleerViewAdapter;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +9,8 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
+import tanvir.multiplexer.R;
+
 /**
  * Created by USER on 01-Feb-17.
  */
@@ -16,7 +18,7 @@ import com.bumptech.glide.Glide;
 public class RecyclerAdapterForSeraChobi extends RecyclerView.Adapter<RecyclerAdapterForSeraChobi.RecyclerViewHolder> {
 
 
-    private int[] images = {R.drawable.image_1, R.drawable.image_2, R.drawable.image_3, R.drawable.image_4};
+    private int[] images = {R.drawable.sera_chobi_1, R.drawable.sera_chobi_2, R.drawable.sera_chobi_3, R.drawable.sera_chobi_4};
 
     Activity activity;
 

@@ -19,8 +19,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\USER\Desktop\Multiplexer_design\mail-black-envelope-symbol(1).png" />
-                                      <entry key="outputName" value="ic_action_email" />
+                                      <entry key="imageAsset" value="C:\Users\HP\Desktop\Multiplexer\Multiplexer_design\notifications-button.png" />
+                                      <entry key="outputName" value="ic_action_notification" />
                                     </map>
                                   </option>
                                 </PersistentState>

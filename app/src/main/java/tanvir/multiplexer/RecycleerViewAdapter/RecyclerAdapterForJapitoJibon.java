@@ -1,4 +1,4 @@
-package tanvir.multiplexer;
+package tanvir.multiplexer.RecycleerViewAdapter;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+
+import tanvir.multiplexer.R;
 
 /**
  * Created by USER on 01-Feb-17.
