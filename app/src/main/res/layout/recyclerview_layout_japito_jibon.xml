@@ -26,6 +26,7 @@
                 android:src="@drawable/image_1" />
 
             <TextView
+                android:id="@+id/japitoJibonNewsTV"
                 android:textColor="@color/colorPrimaryDark"
                 android:layout_margin="5dp"
                 android:text="২৭ এপ্রিল রিলিজ পেতে যাচ্ছে এ্যাভেন্জার্স ইনফিনিটি ওয়ার"

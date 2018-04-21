@@ -6,8 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
 
 import tanvir.multiplexer.R;
 
@@ -18,15 +21,17 @@ import tanvir.multiplexer.R;
 public class RecyclerAdapterForJapitoJibon extends RecyclerView.Adapter<RecyclerAdapterForJapitoJibon.RecyclerViewHolder> {
 
 
-    private int[] images = {R.drawable.image_1, R.drawable.image_2, R.drawable.image_3, R.drawable.image_4};
+    private int[] images = {R.drawable.japito_jibon_1, R.drawable.japito_jibon_2};
 
     Activity activity;
+    private ArrayList<String> data;
 
 
-    public RecyclerAdapterForJapitoJibon(Activity activity)
+    public RecyclerAdapterForJapitoJibon(Activity activity, ArrayList<String> data)
     {
 
         this.activity = activity;
+        this.data=data;
     }
 
     @Override
@@ -44,7 +49,7 @@ public class RecyclerAdapterForJapitoJibon extends RecyclerView.Adapter<Recycler
     public void onBindViewHolder(final RecyclerViewHolder holder, int position) {
 
 
-
+        holder.japitoJebonNewsTV.setText(data.get(position));
 
         Glide.with(activity)
                 .load(images[position])
@@ -63,6 +68,7 @@ public class RecyclerAdapterForJapitoJibon extends RecyclerView.Adapter<Recycler
     {
 
         ImageView imageView;
+        TextView japitoJebonNewsTV;
 
         public RecyclerViewHolder(View view)
         {
@@ -70,6 +76,7 @@ public class RecyclerAdapterForJapitoJibon extends RecyclerView.Adapter<Recycler
 
 
             imageView =  view.findViewById(R.id.imgJapitoJibon);
+            japitoJebonNewsTV=view.findViewById(R.id.japitoJibonNewsTV);
 
         }
     }

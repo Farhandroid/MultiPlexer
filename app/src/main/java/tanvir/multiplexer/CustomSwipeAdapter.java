@@ -18,7 +18,7 @@ import com.bumptech.glide.Glide;
 
 public class CustomSwipeAdapter extends PagerAdapter {
 
-    private int[] images = {R.drawable.image_1, R.drawable.image_2, R.drawable.image_3, R.drawable.image_4};
+    private int[] images = {R.drawable.japito_jibon_1, R.drawable.japito_jibon_2, R.drawable.shikkhya_sohayika_4};
     private LayoutInflater inflater;
     private Context context;
 

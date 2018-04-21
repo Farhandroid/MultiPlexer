@@ -21,7 +21,7 @@ import tanvir.multiplexer.R;
 public class RecyclerAdapterForSorbosheshSongbadCricketfragment extends RecyclerView.Adapter<RecyclerAdapterForSorbosheshSongbadCricketfragment.RecyclerViewHolder> {
 
 
-    private int[] images = {R.drawable.kheladhula_cricket_2, R.drawable.kheladhula_cricket_1};
+    private int[] images = {R.drawable.kheladhula_1, R.drawable.kheladhula_2};
 
     ArrayList<String> data;
 

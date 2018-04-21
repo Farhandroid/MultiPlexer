@@ -1,14 +1,19 @@
 package tanvir.multiplexer.Activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
 import com.viewpagerindicator.CirclePageIndicator;
@@ -24,6 +29,12 @@ import tanvir.multiplexer.RecycleerViewAdapter.RecyclerAdapterForShikkhaSohayika
 import tanvir.multiplexer.RecycleerViewAdapter.RecyclerAdapterForShocolChobi;
 
 public class HomePage extends AppCompatActivity {
+
+
+    Context context;
+
+
+    BottomNavigationView bottomNavigationView;
 
     private android.support.v7.widget.Toolbar toolbar;
     CustomSwipeAdapter customSwipeAdapter;
@@ -52,6 +63,8 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        context=HomePage.this;
 
         toolbar = findViewById(R.id.toolbarlayoutinhome_page);
         setSupportActionBar(toolbar);
@@ -86,6 +99,12 @@ public class HomePage extends AppCompatActivity {
 
         //Recyclerview for japito jibon
 
+        ArrayList<String> japitoJibonData=new ArrayList<>();
+        japitoJibonData.add("মোবাইল আসক্তি ডেকে আনছে চরম বিপর্যয়");
+        japitoJibonData.add("মোবাইল ফোন ব্যাবহারে যে বিষয়গুলো মাথায় রাখা উচিৎ ");
+
+
+
 
         recyclerViewForJapitoJibon= findViewById(R.id.RV_japitoJibon);
 
@@ -95,8 +114,9 @@ public class HomePage extends AppCompatActivity {
         SnapHelper snapHelperStartJapitoJibon = new GravitySnapHelper(Gravity.START);
         snapHelperStartJapitoJibon.attachToRecyclerView(recyclerViewForJapitoJibon);
 
+
         recyclerViewForJapitoJibon.setHasFixedSize(true);
-        adapterForJapitoJibon = new RecyclerAdapterForJapitoJibon(this);
+        adapterForJapitoJibon = new RecyclerAdapterForJapitoJibon(this,japitoJibonData);
 
         recyclerViewForJapitoJibon.setAdapter(adapterForJapitoJibon);
 
@@ -154,6 +174,23 @@ public class HomePage extends AppCompatActivity {
         adapterForShocolChobi = new RecyclerAdapterForShocolChobi(this);
 
         recyclerViewForShocolChobi.setAdapter(adapterForShocolChobi);
+
+        ///Bottom navigation
+
+        bottomNavigationView=findViewById(R.id.btmNavigation);
+        bottomNavigationView.getMenu().findItem(R.id.home_bottom_navigation).setChecked(true);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+
+
+
+
+                return true;
+            }
+        });
 
 
 

@@ -21,9 +21,8 @@
                 android:id="@+id/imgSorbosheshShongbad"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-
                 android:scaleType="centerCrop"
-                android:src="@drawable/kheladhula_cricket_2" />
+                android:src="@drawable/kheladhula_1" />
 
             <TextView
                 android:id="@+id/sorbosheshSongbadTV"
