@@ -1,5 +1,6 @@
 package tanvir.multiplexer.Activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -10,14 +11,15 @@ import android.widget.Toast;
 
 import tanvir.multiplexer.R;
 
-import static android.graphics.Color.WHITE;
-
 public class PaymentMethod extends AppCompatActivity {
 
-    ImageButton payWithPin , payWithBikash, payWithRocket , payWithMaxis, payWithVisa, payWithMasterCard;
+    ImageButton payWithPin, payWithBikash, payWithRocket, payWithMaxis, payWithVisa, payWithMasterCard;
 
-    boolean isItFirstTime=true;
-    boolean isAnyThinSelected=false;
+
+    boolean isAnyThingSelected = false;
+
+    ImageButton selectedButton;
+    String selectedMethod = "";
 
 
     @Override
@@ -25,29 +27,24 @@ public class PaymentMethod extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_method);
 
-        payWithPin=findViewById(R.id.payWithPin);
-        payWithBikash=findViewById(R.id.payWithBikash);
-        payWithRocket=findViewById(R.id.payWithRocket);
-        payWithMaxis=findViewById(R.id.payWithMaxis);
-        payWithVisa=findViewById(R.id.payWithVisa);
-        payWithMasterCard=findViewById(R.id.payWithMasterCard);
+        payWithPin = findViewById(R.id.payWithPin);
+        payWithBikash = findViewById(R.id.payWithBikash);
+        payWithRocket = findViewById(R.id.payWithRocket);
+        payWithMaxis = findViewById(R.id.payWithMaxis);
+        payWithVisa = findViewById(R.id.payWithVisa);
+        payWithMasterCard = findViewById(R.id.payWithMasterCard);
 
         payWithPin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (isItFirstTime)
-                {
-                    isAnyThinSelected=true;
-                    isItFirstTime=false;
-                    payWithPin.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_red_border, null));
-                }
-                else
-                {
-                    isAnyThinSelected=false;
-                    payWithPin.setBackgroundColor(Color.WHITE);
-                    isItFirstTime=true;
-                }
+                if (selectedButton != null)
+                    selectedButton.setBackgroundColor(Color.WHITE);
+
+                selectedButton = findViewById(R.id.payWithPin);
+                selectedMethod = "পিন";
+                payWithPin.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_red_border, null));
+
 
             }
         });
@@ -56,18 +53,14 @@ public class PaymentMethod extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (isItFirstTime)
-                {
-                    isAnyThinSelected=true;
-                    isItFirstTime=false;
-                    payWithBikash.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_red_border, null));
-                }
-                else
-                {
-                    isAnyThinSelected=false;
-                    payWithBikash.setBackgroundColor(Color.WHITE);
-                    isItFirstTime=true;
-                }
+
+                if (selectedButton != null)
+                    selectedButton.setBackgroundColor(Color.WHITE);
+                selectedMethod = "বিকাশ";
+
+                selectedButton = findViewById(R.id.payWithBikash);
+                payWithBikash.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_red_border, null));
+
 
             }
         });
@@ -76,18 +69,16 @@ public class PaymentMethod extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (isItFirstTime)
-                {
-                    isAnyThinSelected=true;
-                    isItFirstTime=false;
-                    payWithRocket.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_red_border, null));
-                }
-                else
-                {
-                    isAnyThinSelected=false;
-                    payWithRocket.setBackgroundColor(Color.WHITE);
-                    isItFirstTime=true;
-                }
+
+                if (selectedButton != null)
+                    selectedButton.setBackgroundColor(Color.WHITE);
+                selectedMethod = "রকেট";
+
+                selectedButton = findViewById(R.id.payWithRocket);
+
+
+                payWithRocket.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_red_border, null));
+
 
             }
         });
@@ -96,18 +87,16 @@ public class PaymentMethod extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (isItFirstTime)
-                {
-                    isAnyThinSelected=true;
-                    isItFirstTime=false;
-                    payWithMaxis.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_red_border, null));
-                }
-                else
-                {
-                    isAnyThinSelected=false;
-                    payWithMaxis.setBackgroundColor(Color.WHITE);
-                    isItFirstTime=true;
-                }
+
+                if (selectedButton != null)
+                    selectedButton.setBackgroundColor(Color.WHITE);
+                selectedMethod = "ম্যাক্সিস";
+                ;
+                selectedButton = findViewById(R.id.payWithMaxis);
+
+
+                payWithMaxis.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_red_border, null));
+
 
             }
         });
@@ -116,18 +105,15 @@ public class PaymentMethod extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (isItFirstTime)
-                {
-                    isAnyThinSelected=true;
-                    isItFirstTime=false;
-                    payWithVisa.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_red_border, null));
-                }
-                else
-                {
-                    isAnyThinSelected=false;
-                    payWithVisa.setBackgroundColor(Color.WHITE);
-                    isItFirstTime=true;
-                }
+                if (selectedButton != null)
+                    selectedButton.setBackgroundColor(Color.WHITE);
+                selectedMethod = "ভিসা কার্ড";
+
+                selectedButton = findViewById(R.id.payWithVisa);
+
+
+                payWithVisa.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_red_border, null));
+
 
             }
         });
@@ -136,18 +122,16 @@ public class PaymentMethod extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (isItFirstTime)
-                {
-                    isAnyThinSelected=true;
-                    isItFirstTime=false;
-                    payWithMasterCard.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_red_border, null));
-                }
-                else
-                {
-                    isAnyThinSelected=false;
-                    payWithMasterCard.setBackgroundColor(Color.WHITE);
-                    isItFirstTime=true;
-                }
+
+                if (selectedButton != null)
+                    selectedButton.setBackgroundColor(Color.WHITE);
+                selectedMethod = "মাস্টার কার্ড";
+
+                selectedButton = findViewById(R.id.payWithMasterCard);
+
+
+                payWithMasterCard.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.btn_red_border, null));
+
 
             }
         });
@@ -155,9 +139,24 @@ public class PaymentMethod extends AppCompatActivity {
 
     public void payMent(View view) {
 
-        if (isAnyThinSelected=true)
-            Toast.makeText(PaymentMethod.this, "payment Success", Toast.LENGTH_SHORT).show();
+        if (selectedMethod.length()>0)
+            Toast.makeText(PaymentMethod.this, "ধন্যবাদ "+selectedMethod+" এর মাধ্যমে পেমেন্ট করার জন্যে", Toast.LENGTH_SHORT).show();
         else
-            Toast.makeText(this, "please select a payment method to pay", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "যেকোনো একটি পেমেন্ট মেথড সিলেক্ট করুন", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onBackPressed() {
+
+
+
+
+        super.onBackPressed();
+        Intent myIntent = new Intent(getApplicationContext(), HomePage.class);
+        myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        this.startActivity(myIntent);
+        overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        finish();
+
+
     }
 }

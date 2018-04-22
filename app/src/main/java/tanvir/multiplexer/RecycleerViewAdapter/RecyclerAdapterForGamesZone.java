@@ -1,6 +1,7 @@
 package tanvir.multiplexer.RecycleerViewAdapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Paint;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import tanvir.multiplexer.Activity.PaymentMethod;
 import tanvir.multiplexer.ModelClass.GamesZone;
 import tanvir.multiplexer.R;
 
@@ -41,7 +43,7 @@ public class RecyclerAdapterForGamesZone extends RecyclerView.Adapter<RecyclerAd
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_layout_games_zone, parent, false);
 
-        RecyclerViewHolder recyclerViewHolder = new RecyclerViewHolder(view);
+        RecyclerViewHolder recyclerViewHolder = new RecyclerViewHolder(view,activity);
         return recyclerViewHolder;
     }
 
@@ -73,9 +75,12 @@ public class RecyclerAdapterForGamesZone extends RecyclerView.Adapter<RecyclerAd
         ImageView imageView;
         TextView strikrthroughTextView;
         TextView mullocharTV, newPriceTV;
+        Activity activity;
 
-        public RecyclerViewHolder(View view) {
+        public RecyclerViewHolder(View view, final Activity activity) {
             super(view);
+
+            this.activity=activity;
 
             mullocharTV = view.findViewById(R.id.gamesZoneTV);
             strikrthroughTextView = view.findViewById(R.id.strikeThroughTextInGamesZone);
@@ -86,7 +91,11 @@ public class RecyclerAdapterForGamesZone extends RecyclerView.Adapter<RecyclerAd
                 @Override
                 public void onClick(View view) {
 
-
+                    Intent myIntent = new Intent(activity, PaymentMethod.class);
+                    myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    activity.startActivity(myIntent);
+                    activity.overridePendingTransition(R.anim.left_in, R.anim.left_out);
+                    activity.finish();
                 }
             });
 

@@ -7,5 +7,5 @@
     <dimen name="textSize">17sp</dimen>
     <dimen name="recyclerview_image_padding">4dp</dimen>
     <dimen name="paymentButtOn_Size">120dp</dimen>
-    <dimen name="payment_method_width">170dp</dimen>
+    <dimen name="payment_method_width">160dp</dimen>
 </resources>

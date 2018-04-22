@@ -1,12 +1,22 @@
 package tanvir.multiplexer.Activity;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import tanvir.multiplexer.R;
 
@@ -15,6 +25,12 @@ public class SignInActivity extends AppCompatActivity {
 
     EditText userName , password;
 
+    String[] permissions = new String[]{
+            Manifest.permission.ACCESS_NETWORK_STATE,
+
+
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +38,8 @@ public class SignInActivity extends AppCompatActivity {
 
         userName=findViewById(R.id.txtUserName);
         password=findViewById(R.id.txtpassword);
+        
+        checkPermissions();
 
 
 
@@ -59,15 +77,22 @@ public class SignInActivity extends AppCompatActivity {
 
     public void checkCredintial()
     {
-
-        if (password.getText().toString().equals("12345") && userName.getText().toString().equals("admin"))
+        
+        if (isOnline())
         {
-            homePageStart();
+            if (password.getText().toString().equals("12345") && userName.getText().toString().equals("admin"))
+            {
+                homePageStart();
+            }
+            else
+            {
+                Toast.makeText(this, "আপনার তথ্য সঠিক নয় ", Toast.LENGTH_SHORT).show();
+            }
         }
         else
-        {
-            Toast.makeText(this, "Sorry\n Your credintial is wrong ", Toast.LENGTH_SHORT).show();
-        }
+            Toast.makeText(this, "ইন্টারনেট সংযোগ করে চেষ্টা করুন", Toast.LENGTH_SHORT).show();
+
+        
     }
 
     public void homePageStart()
@@ -77,5 +102,32 @@ public class SignInActivity extends AppCompatActivity {
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
         finish();
+    }
+
+    private boolean isOnline() {
+
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean checkPermissions() {
+        int result;
+        List<String> listPermissionsNeeded = new ArrayList<>();
+        for (String p : permissions) {
+            result = ContextCompat.checkSelfPermission(this, p);
+            if (result != PackageManager.PERMISSION_GRANTED) {
+                listPermissionsNeeded.add(p);
+            }
+        }
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), 100);
+            return false;
+        }
+        return true;
     }
 }
