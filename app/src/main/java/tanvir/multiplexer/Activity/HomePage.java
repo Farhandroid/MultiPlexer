@@ -227,4 +227,65 @@ public class HomePage extends AppCompatActivity {
 
 
     }
+
+    public void startPorashunaActivity(View view) {
+        Intent myIntent = new Intent(getApplicationContext(), Porashuna.class);
+        myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        this.startActivity(myIntent);
+        overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        finish();
+
+    }
+
+    public void startAuttoHashiActivity(View view) {
+
+        Intent myIntent = new Intent(getApplicationContext(), AuttoHashiActivity.class);
+        myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        this.startActivity(myIntent);
+        overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        finish();
+
+
+    }
+
+    public void startJibonJaponActivity(View view) {
+
+        Intent myIntent = new Intent(getApplicationContext(), JibonJapon.class);
+        myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        this.startActivity(myIntent);
+        overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        finish();
+
+    }
+
+    public void startPachMishaliActivity(View view) {
+
+        Intent myIntent = new Intent(getApplicationContext(), PachMishali.class);
+        myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        this.startActivity(myIntent);
+        overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        finish();
+
+
+    }
+
+    public void startBigganOProjuktiActivity(View view) {
+
+        Intent myIntent = new Intent(getApplicationContext(), BigganOProjukti.class);
+        myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        this.startActivity(myIntent);
+        overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        finish();
+
+    }
+
+    public void startCartoonActivity(View view) {
+
+        Intent myIntent = new Intent(getApplicationContext(), Cartoon.class);
+        myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        this.startActivity(myIntent);
+        overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        finish();
+
+    }
 }

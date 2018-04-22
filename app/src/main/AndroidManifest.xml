@@ -25,7 +25,15 @@
         <activity android:name=".Activity.SignInActivity" />
         <activity android:name=".Activity.ForgetPasswordActivity" />
         <activity android:name=".Activity.Sports" />
-        <activity android:name=".Activity.WallpaperBundleActivity"></activity>
+        <activity android:name=".Activity.WallpaperBundleActivity" />
+        <activity android:name=".Activity.UserProfile" />
+        <activity android:name=".Activity.gorom_khobor_activity" />
+        <activity android:name=".Activity.Porashuna" />
+        <activity android:name=".Activity.AuttoHashiActivity" />
+        <activity android:name=".Activity.JibonJapon" />
+        <activity android:name=".Activity.PachMishali" />
+        <activity android:name=".Activity.BigganOProjukti" />
+        <activity android:name=".Activity.Cartoon"></activity>
     </application>
 
 </manifest>

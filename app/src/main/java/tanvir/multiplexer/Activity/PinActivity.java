@@ -10,8 +10,8 @@ import com.goodiebag.pinview.Pinview;
 import tanvir.multiplexer.R;
 
 public class PinActivity extends AppCompatActivity {
-    Pinview pinview;
-    private android.support.v7.widget.Toolbar toolbar;
+        Pinview pinview;
+        private android.support.v7.widget.Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

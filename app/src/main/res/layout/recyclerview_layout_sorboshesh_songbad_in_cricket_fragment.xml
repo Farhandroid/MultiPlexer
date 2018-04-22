@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:padding="15dp"
+    android:padding="1.5dp"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
-        app:cardElevation="8dp">
+        app:cardUseCompatPadding="true"
+        app:cardElevation="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,13 +28,15 @@
             <TextView
                 android:id="@+id/sorbosheshSongbadTV"
                 android:textColor="@color/colorPrimaryDark"
-                android:layout_margin="5dp"
+                android:layout_margin="4dp"
+                android:textSize="@dimen/textSize"
                 android:text="২৭ এপ্রিল রিলিজ পেতে যাচ্ছে এ্যাভেন্জার্স ইনফিনিটি ওয়ার"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <LinearLayout
-                android:layout_marginTop="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 

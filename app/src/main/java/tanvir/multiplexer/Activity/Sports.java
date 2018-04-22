@@ -1,6 +1,7 @@
 package tanvir.multiplexer.Activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -24,7 +25,6 @@ public class Sports extends AppCompatActivity {
     Context context;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +33,7 @@ public class Sports extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbarlayoutinsports);
         setSupportActionBar(toolbar);
 
-        context=Sports.this;
+        context = Sports.this;
 
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPagerInSports);
@@ -65,7 +65,7 @@ public class Sports extends AppCompatActivity {
 
                 if (position == 1) {
 
-                    Toast.makeText(context, "Safe", Toast.LENGTH_SHORT).show();
+                    ///Toast.makeText(context, "Safe", Toast.LENGTH_SHORT).show();
                 } else {
 
                     ///Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
@@ -80,5 +80,25 @@ public class Sports extends AppCompatActivity {
             }
 
         });
+    }
+
+
+    @Override
+    public void onBackPressed() {
+
+        int count = getFragmentManager().getBackStackEntryCount();
+
+        if (count == 0) {
+            super.onBackPressed();
+            Intent myIntent = new Intent(getApplicationContext(), HomePage.class);
+            myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            this.startActivity(myIntent);
+            overridePendingTransition(R.anim.left_in, R.anim.left_out);
+            finish();
+            //additional code
+        } else {
+            getFragmentManager().popBackStack();
+        }
+
     }
 }

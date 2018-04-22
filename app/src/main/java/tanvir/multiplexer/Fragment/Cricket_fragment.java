@@ -1,6 +1,7 @@
 package tanvir.multiplexer.Fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +16,7 @@ import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
 
 import java.util.ArrayList;
 
+import tanvir.multiplexer.Activity.MainActivity;
 import tanvir.multiplexer.R;
 import tanvir.multiplexer.RecycleerViewAdapter.RecyclerAdapterForKheladhulaCricket;
 import tanvir.multiplexer.RecycleerViewAdapter.RecyclerAdapterForMulloChar;
@@ -91,5 +93,7 @@ public class Cricket_fragment extends Fragment {
 
         return view;
     }
+
+
 
 }
