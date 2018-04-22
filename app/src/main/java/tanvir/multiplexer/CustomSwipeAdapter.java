@@ -12,29 +12,34 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
+
 /**
  * Created by USER on 20-Nov-17.
  */
 
 public class CustomSwipeAdapter extends PagerAdapter {
 
-    private int[] images = {R.drawable.japito_jibon_1, R.drawable.japito_jibon_2, R.drawable.shikkhya_sohayika_4};
+    ///private int[] images = {R.drawable.japito_jibon_1, R.drawable.japito_jibon_2, R.drawable.shikkhya_sohayika_4};
     private LayoutInflater inflater;
+
+    ArrayList<String> images;
     private Context context;
 
 
-    public CustomSwipeAdapter(Context context) {
+    public CustomSwipeAdapter(Context context, ArrayList<String> images) {
         this.context = context;
+        this.images=images;
     }
 
     @Override
     public int getCount() {
-        return images.length;
+        return images.size();
     }
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view == (LinearLayout) object;
+        return view ==  object;
     }
 
     @Override
@@ -57,7 +62,7 @@ public class CustomSwipeAdapter extends PagerAdapter {
 
 
         Glide.with(context)
-                .load(images[position])
+                .load(images.get(position))
                 .into(imageView);
 
 

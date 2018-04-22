@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import tanvir.multiplexer.ModelClass.ShikkhaSohaYika;
 import tanvir.multiplexer.R;
 
 /**
@@ -21,17 +22,14 @@ import tanvir.multiplexer.R;
 public class RecyclerAdapterForShikkhaSohayika extends RecyclerView.Adapter<RecyclerAdapterForShikkhaSohayika.RecyclerViewHolder> {
 
 
-    private int[] images = {R.drawable.shikkhya_sohayika_1, R.drawable.shikkhya_sohayika_2};
-    private ArrayList<String> data;
-
+    ArrayList<ShikkhaSohaYika> shikkhaSohaYikaArrayList;
     Activity activity;
 
-
-    public RecyclerAdapterForShikkhaSohayika(Activity activity,ArrayList<String> data)
+    public RecyclerAdapterForShikkhaSohayika(Activity activity,ArrayList<ShikkhaSohaYika> shikkhaSohaYikaArrayList)
     {
 
         this.activity = activity;
-        this.data=data;
+        this.shikkhaSohaYikaArrayList=shikkhaSohaYikaArrayList;
     }
 
     @Override
@@ -43,32 +41,24 @@ public class RecyclerAdapterForShikkhaSohayika extends RecyclerView.Adapter<Recy
         return recyclerViewHolder;
     }
 
-
-
     @Override
     public void onBindViewHolder(final RecyclerViewHolder holder, int position) {
 
-
-
-        holder.news.setText(data.get(position));
-
+        holder.news.setText(shikkhaSohaYikaArrayList.get(position).getContentTitle());
 
         Glide.with(activity)
-                .load(images[position])
-                .into(holder.imageView);
-
+                .load(shikkhaSohaYikaArrayList.get(position).getImageURL()).into(holder.imageView);
 
     }
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return shikkhaSohaYikaArrayList.size();
     }
 
 
     public  static  class  RecyclerViewHolder extends RecyclerView.ViewHolder
     {
-
         ImageView imageView;
         TextView news;
 
@@ -81,6 +71,5 @@ public class RecyclerAdapterForShikkhaSohayika extends RecyclerView.Adapter<Recy
 
         }
     }
-
 
 }

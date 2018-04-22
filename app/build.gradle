@@ -33,5 +33,5 @@ dependencies {
     implementation 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
     implementation 'com.github.rubensousa:gravitysnaphelper:1.5'
     implementation 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
-
+    implementation 'com.mcxiaoke.volley:library:1.0.19'
 }

@@ -9,6 +9,9 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
+
+import tanvir.multiplexer.ModelClass.ShocolChobi;
 import tanvir.multiplexer.R;
 
 /**
@@ -18,15 +21,17 @@ import tanvir.multiplexer.R;
 public class RecyclerAdapterForShocolChobi extends RecyclerView.Adapter<RecyclerAdapterForShocolChobi.RecyclerViewHolder> {
 
 
-    private int[] images = {R.drawable.gif_1, R.drawable.gif_2, R.drawable.gif_1, R.drawable.gif_2};
+    ///private int[] images = {R.drawable.gif_1, R.drawable.gif_2, R.drawable.gif_1, R.drawable.gif_2};
 
     Activity activity;
+    ArrayList<ShocolChobi> shocolChobiArrayList;
 
 
-    public RecyclerAdapterForShocolChobi(Activity activity)
+    public RecyclerAdapterForShocolChobi(Activity activity,ArrayList<ShocolChobi> shocolChobiArrayList)
     {
 
         this.activity = activity;
+        this.shocolChobiArrayList=shocolChobiArrayList;
     }
 
     @Override
@@ -47,7 +52,7 @@ public class RecyclerAdapterForShocolChobi extends RecyclerView.Adapter<Recycler
 
 
         Glide.with(activity)
-                .load(images[position])
+                .load(shocolChobiArrayList.get(position).getContentUrl())
                 .into(holder.imageView);
 
 
@@ -55,7 +60,7 @@ public class RecyclerAdapterForShocolChobi extends RecyclerView.Adapter<Recycler
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return shocolChobiArrayList.size();
     }
 
 
@@ -67,7 +72,6 @@ public class RecyclerAdapterForShocolChobi extends RecyclerView.Adapter<Recycler
         public RecyclerViewHolder(View view)
         {
             super(view);
-
 
             imageView =  view.findViewById(R.id.imgShocholChobi);
 

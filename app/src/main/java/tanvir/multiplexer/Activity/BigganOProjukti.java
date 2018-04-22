@@ -32,7 +32,6 @@ public class BigganOProjukti extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbarlayoutinbigganOProjukti);
         setSupportActionBar(toolbar);
 
-
         ArrayList<String> BigganOProjuktiData=new ArrayList<>();
         BigganOProjuktiData.add("পঞ্চম শ্রেনী সমাপনি পরীক্ষা প্রস্তুতি- পর্ব ৫");
         BigganOProjuktiData.add("পঞ্চম শ্রেনী সমাপনি পরীক্ষা প্রস্তুতি- পর্ব ৪ ");
@@ -45,7 +44,6 @@ public class BigganOProjukti extends AppCompatActivity {
         SnapHelper snapHelperStartBigganOProjukti = new GravitySnapHelper(Gravity.START);
         snapHelperStartBigganOProjukti.attachToRecyclerView(recyclerViewForBigganOProjukti);
 
-
         recyclerViewForBigganOProjukti.setHasFixedSize(true);
         adapterForBigganOProjukti = new RecyclerAdapterForBigganOProjukti(this,BigganOProjuktiData);
 
@@ -54,17 +52,11 @@ public class BigganOProjukti extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
-
-
-
         super.onBackPressed();
         Intent myIntent = new Intent(getApplicationContext(), HomePage.class);
         myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
         finish();
-
-
     }
 }

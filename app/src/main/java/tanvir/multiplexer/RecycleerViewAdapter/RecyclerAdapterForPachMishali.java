@@ -20,7 +20,6 @@ import tanvir.multiplexer.R;
 
 public class RecyclerAdapterForPachMishali extends RecyclerView.Adapter<RecyclerAdapterForPachMishali.RecyclerViewHolder> {
 
-
     private int[] images = {R.drawable.shikkhya_sohayika_1, R.drawable.shikkhya_sohayika_2};
 
     Activity activity;
@@ -29,14 +28,12 @@ public class RecyclerAdapterForPachMishali extends RecyclerView.Adapter<Recycler
 
     public RecyclerAdapterForPachMishali(Activity activity, ArrayList<String> data)
     {
-
         this.activity = activity;
         this.data=data;
     }
 
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_layout_pach_mishali,parent,false);
 
         RecyclerViewHolder recyclerViewHolder = new RecyclerViewHolder(view);
@@ -47,15 +44,10 @@ public class RecyclerAdapterForPachMishali extends RecyclerView.Adapter<Recycler
 
     @Override
     public void onBindViewHolder(final RecyclerViewHolder holder, int position) {
-
-
         holder.pachMishaliNewsTV.setText(data.get(position));
-
         Glide.with(activity)
                 .load(images[position])
                 .into(holder.imageView);
-
-
     }
 
     @Override
@@ -66,19 +58,14 @@ public class RecyclerAdapterForPachMishali extends RecyclerView.Adapter<Recycler
 
     public  static  class  RecyclerViewHolder extends RecyclerView.ViewHolder
     {
-
         ImageView imageView;
         TextView pachMishaliNewsTV;
 
         public RecyclerViewHolder(View view)
         {
             super(view);
-
             imageView=view.findViewById(R.id.imgPachMishali);
-
-
             pachMishaliNewsTV=view.findViewById(R.id.PachMishaliNewsTV);
-
         }
     }
 

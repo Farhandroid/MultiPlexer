@@ -18,8 +18,6 @@ import tanvir.multiplexer.RecycleerViewAdapter.RecyclerAdapterForJibonJapon;
 public class JibonJapon extends AppCompatActivity {
 
     private android.support.v7.widget.Toolbar toolbar;
-
-
     private RecyclerView recyclerViewForJibonJapon;
     public RecyclerAdapterForJibonJapon adapterForJibonJapon;
 
@@ -30,7 +28,6 @@ public class JibonJapon extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbarlayoutinjibonjapon);
         setSupportActionBar(toolbar);
-
 
         ArrayList<String> JibonJaponData=new ArrayList<>();
         JibonJaponData.add("পঞ্চম শ্রেনী সমাপনি পরীক্ষা প্রস্তুতি- পর্ব ৫");
@@ -43,20 +40,13 @@ public class JibonJapon extends AppCompatActivity {
 
         SnapHelper snapHelperStartJibonJapon = new GravitySnapHelper(Gravity.START);
         snapHelperStartJibonJapon.attachToRecyclerView(recyclerViewForJibonJapon);
-
-
         recyclerViewForJibonJapon.setHasFixedSize(true);
         adapterForJibonJapon = new RecyclerAdapterForJibonJapon(this,JibonJaponData);
-
         recyclerViewForJibonJapon.setAdapter(adapterForJibonJapon);
     }
 
     @Override
     public void onBackPressed() {
-
-
-
-
         super.onBackPressed();
         Intent myIntent = new Intent(getApplicationContext(), HomePage.class);
         myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
