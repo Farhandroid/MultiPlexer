@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import tanvir.multiplexer.ModelClass.BigganOProjukti;
 import tanvir.multiplexer.R;
 
 /**
@@ -21,17 +22,16 @@ import tanvir.multiplexer.R;
 public class RecyclerAdapterForBigganOProjukti extends RecyclerView.Adapter<RecyclerAdapterForBigganOProjukti.RecyclerViewHolder> {
 
 
-    private int[] images = {R.drawable.shikkhya_sohayika_1, R.drawable.shikkhya_sohayika_2};
 
     Activity activity;
-    private ArrayList<String> data;
+    private ArrayList<BigganOProjukti> bigganOProjuktiArrayList;
 
 
-    public RecyclerAdapterForBigganOProjukti(Activity activity, ArrayList<String> data)
+    public RecyclerAdapterForBigganOProjukti(Activity activity,  ArrayList<BigganOProjukti> bigganOProjuktiArrayList)
     {
 
         this.activity = activity;
-        this.data=data;
+        this.bigganOProjuktiArrayList=bigganOProjuktiArrayList;
     }
 
     @Override
@@ -49,10 +49,10 @@ public class RecyclerAdapterForBigganOProjukti extends RecyclerView.Adapter<Recy
     public void onBindViewHolder(final RecyclerViewHolder holder, int position) {
 
 
-        holder.bigganOProjuktiNewsTV.setText(data.get(position));
+        holder.bigganOProjuktiNewsTV.setText(bigganOProjuktiArrayList.get(position).getContentTitle());
 
         Glide.with(activity)
-                .load(images[position])
+                .load(bigganOProjuktiArrayList.get(position).getImageUrl())
                 .into(holder.imageView);
 
 
@@ -60,7 +60,7 @@ public class RecyclerAdapterForBigganOProjukti extends RecyclerView.Adapter<Recy
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return bigganOProjuktiArrayList.size();
     }
 
 

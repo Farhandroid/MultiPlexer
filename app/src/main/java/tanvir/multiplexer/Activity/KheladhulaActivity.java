@@ -9,11 +9,14 @@ import android.os.Bundle;
 
 import tanvir.multiplexer.Fragment.Cricket_fragment;
 import tanvir.multiplexer.Fragment.Football_fragment;
+import tanvir.multiplexer.Fragment.MyInfoFragmentInProfileActivity;
+import tanvir.multiplexer.Fragment.MyItemFragmentInProfileActivity;
+import tanvir.multiplexer.Fragment.PaymentListFragmentInProfileActivity;
 import tanvir.multiplexer.Fragment.other_sports_fragment;
 import tanvir.multiplexer.R;
 import tanvir.multiplexer.ViewpagerAdapter.ViewPagerAdapterForSports;
 
-public class Sports extends AppCompatActivity {
+public class KheladhulaActivity extends AppCompatActivity {
 
     private android.support.v7.widget.Toolbar toolbar;
     TabLayout tabLayout;
@@ -31,7 +34,7 @@ public class Sports extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbarlayoutinsports);
         setSupportActionBar(toolbar);
 
-        context = Sports.this;
+        context = KheladhulaActivity.this;
 
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPagerInSports);

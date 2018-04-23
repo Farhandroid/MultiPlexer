@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -58,7 +59,6 @@ public class HomePage extends AppCompatActivity {
     ArrayList<GamesZone> gamesZoneArrayList;
     ArrayList<ShikkhaSohaYika> shikkhaSohaYikaArrayList;
 
-
     BottomNavigationView bottomNavigationView;
 
     private android.support.v7.widget.Toolbar toolbar;
@@ -86,6 +86,8 @@ public class HomePage extends AppCompatActivity {
 
     RequestQueue queue;
 
+    ImageView profileIcon , notificationIcon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,6 +101,10 @@ public class HomePage extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbarlayoutinhome_page);
         setSupportActionBar(toolbar);
+
+        profileIcon = findViewById(R.id.profileIcon);
+        notificationIcon=findViewById(R.id.notificationInHomePageToolbar);
+
 
         japitoJibonMCArrayList = new ArrayList<>();
         mulloCharArrayList = new ArrayList<>();
@@ -116,6 +122,25 @@ public class HomePage extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 return true;
+            }
+        });
+
+        profileIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent profileIntent = new Intent(HomePage.this, ProfileActivity.class);
+                startActivity(profileIntent);
+            }
+        });
+
+
+        notificationIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent profileIntent = new Intent(HomePage.this, NotificationActivity.class);
+                startActivity(profileIntent);
+
             }
         });
 
@@ -375,7 +400,7 @@ public class HomePage extends AppCompatActivity {
 
     public void startSportActivity(View view) {
 
-        Intent myIntent = new Intent(getApplicationContext(), Sports.class);
+        Intent myIntent = new Intent(getApplicationContext(), KheladhulaActivity.class);
         myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
@@ -385,7 +410,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void startPorashunaActivity(View view) {
-        Intent myIntent = new Intent(getApplicationContext(), Porashuna.class);
+        Intent myIntent = new Intent(getApplicationContext(), PorashunaActivity.class);
         myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
@@ -416,7 +441,7 @@ public class HomePage extends AppCompatActivity {
 
     public void startPachMishaliActivity(View view) {
 
-        Intent myIntent = new Intent(getApplicationContext(), PachMishali.class);
+        Intent myIntent = new Intent(getApplicationContext(), PachMishaliActivity.class);
         myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
@@ -427,7 +452,7 @@ public class HomePage extends AppCompatActivity {
 
     public void startBigganOProjuktiActivity(View view) {
 
-        Intent myIntent = new Intent(getApplicationContext(), BigganOProjukti.class);
+        Intent myIntent = new Intent(getApplicationContext(), BigganOProjuktiActivity.class);
         myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
@@ -437,7 +462,7 @@ public class HomePage extends AppCompatActivity {
 
     public void startCartoonActivity(View view) {
 
-        Intent myIntent = new Intent(getApplicationContext(), Cartoon.class);
+        Intent myIntent = new Intent(getApplicationContext(), CartoonActivity.class);
         myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.left_in, R.anim.left_out);

@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import tanvir.multiplexer.ModelClass.PacMishali;
 import tanvir.multiplexer.R;
 
 /**
@@ -20,16 +21,16 @@ import tanvir.multiplexer.R;
 
 public class RecyclerAdapterForPachMishali extends RecyclerView.Adapter<RecyclerAdapterForPachMishali.RecyclerViewHolder> {
 
-    private int[] images = {R.drawable.shikkhya_sohayika_1, R.drawable.shikkhya_sohayika_2};
+
 
     Activity activity;
-    private ArrayList<String> data;
+    private ArrayList<PacMishali> pacMishaliArrayList;
 
 
-    public RecyclerAdapterForPachMishali(Activity activity, ArrayList<String> data)
+    public RecyclerAdapterForPachMishali(Activity activity, ArrayList<PacMishali> pacMishaliArrayList)
     {
         this.activity = activity;
-        this.data=data;
+        this.pacMishaliArrayList=pacMishaliArrayList;
     }
 
     @Override
@@ -44,15 +45,15 @@ public class RecyclerAdapterForPachMishali extends RecyclerView.Adapter<Recycler
 
     @Override
     public void onBindViewHolder(final RecyclerViewHolder holder, int position) {
-        holder.pachMishaliNewsTV.setText(data.get(position));
+        holder.pachMishaliNewsTV.setText(pacMishaliArrayList.get(position).getContentTitle());
         Glide.with(activity)
-                .load(images[position])
+                .load(pacMishaliArrayList.get(position).getImageUrl())
                 .into(holder.imageView);
     }
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return pacMishaliArrayList.size();
     }
 
 

@@ -12,33 +12,33 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import tanvir.multiplexer.ModelClass.Porashuna;
+import tanvir.multiplexer.ModelClass.Cartoon;
 import tanvir.multiplexer.R;
 
 /**
  * Created by USER on 01-Feb-17.
  */
 
-public class RecyclerAdapterForPorashuna extends RecyclerView.Adapter<RecyclerAdapterForPorashuna.RecyclerViewHolder> {
+public class RecyclerAdapterForMyItemFragmentInProfile extends RecyclerView.Adapter<RecyclerAdapterForMyItemFragmentInProfile.RecyclerViewHolder> {
 
 
 
 
     Activity activity;
-    private ArrayList<Porashuna> porashunaArrayList;
+    private ArrayList<Cartoon> cartoonArrayList;
 
 
-    public RecyclerAdapterForPorashuna(Activity activity, ArrayList<Porashuna> porashunaArrayList)
+    public RecyclerAdapterForMyItemFragmentInProfile(Activity activity, ArrayList<Cartoon> cartoonArrayList)
     {
 
         this.activity = activity;
-        this.porashunaArrayList=porashunaArrayList;
+        this.cartoonArrayList=cartoonArrayList;
     }
 
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_layout_porashuna,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_layout_cartoon,parent,false);
 
         RecyclerViewHolder recyclerViewHolder = new RecyclerViewHolder(view);
         return recyclerViewHolder;
@@ -50,10 +50,10 @@ public class RecyclerAdapterForPorashuna extends RecyclerView.Adapter<RecyclerAd
     public void onBindViewHolder(final RecyclerViewHolder holder, int position) {
 
 
-        holder.porashunaNewsTV.setText(porashunaArrayList.get(position).getContentTitle());
+        holder. cartoonNewsTV.setText(cartoonArrayList.get(position).getContentTitle());
 
         Glide.with(activity)
-                .load(porashunaArrayList.get(position).getImageUrl())
+                .load(cartoonArrayList.get(position).getImageUrl())
                 .into(holder.imageView);
 
 
@@ -61,7 +61,7 @@ public class RecyclerAdapterForPorashuna extends RecyclerView.Adapter<RecyclerAd
 
     @Override
     public int getItemCount() {
-        return porashunaArrayList.size();
+        return cartoonArrayList.size();
     }
 
 
@@ -69,15 +69,15 @@ public class RecyclerAdapterForPorashuna extends RecyclerView.Adapter<RecyclerAd
     {
 
         ImageView imageView;
-        TextView porashunaNewsTV;
+        TextView cartoonNewsTV;
 
         public RecyclerViewHolder(View view)
         {
             super(view);
 
 
-            imageView =  view.findViewById(R.id.imgPorashuna);
-            porashunaNewsTV=view.findViewById(R.id.porashunNewsTV);
+            imageView =  view.findViewById(R.id.imgCartoon);
+            cartoonNewsTV=view.findViewById(R.id. CartoonNewsTV);
 
         }
     }

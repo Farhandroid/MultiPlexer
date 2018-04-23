@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import tanvir.multiplexer.ModelClass.Kheladhula_Cricket;
 import tanvir.multiplexer.R;
 
 /**
@@ -21,17 +22,16 @@ import tanvir.multiplexer.R;
 public class RecyclerAdapterForSorbosheshSongbadCricketfragment extends RecyclerView.Adapter<RecyclerAdapterForSorbosheshSongbadCricketfragment.RecyclerViewHolder> {
 
 
-    private int[] images = {R.drawable.kheladhula_1, R.drawable.kheladhula_2};
 
-    ArrayList<String> data;
+    ArrayList<Kheladhula_Cricket> kheladhulaCricketArrayList;
 
     Activity activity;
 
 
-    public RecyclerAdapterForSorbosheshSongbadCricketfragment(Activity activity, ArrayList<String> data) {
+    public RecyclerAdapterForSorbosheshSongbadCricketfragment(Activity activity, ArrayList<Kheladhula_Cricket> kheladhulaCricketArrayList) {
 
         this.activity = activity;
-        this.data = data;
+        this.kheladhulaCricketArrayList=kheladhulaCricketArrayList;
     }
 
     @Override
@@ -48,10 +48,10 @@ public class RecyclerAdapterForSorbosheshSongbadCricketfragment extends Recycler
     public void onBindViewHolder(final RecyclerViewHolder holder, int position) {
 
 
-        holder.sorbosheshSongbadTV.setText(data.get(position));
+        holder.sorbosheshSongbadTV.setText(kheladhulaCricketArrayList.get(position).getContentTitle());
 
         Glide.with(activity)
-                .load(images[position])
+                .load(kheladhulaCricketArrayList.get(position).getImageUrl())
                 .into(holder.imageView);
 
 
@@ -59,7 +59,7 @@ public class RecyclerAdapterForSorbosheshSongbadCricketfragment extends Recycler
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return kheladhulaCricketArrayList.size();
     }
 
 

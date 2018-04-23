@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/Halka_Gray"
     android:layout_height="match_parent"
-    tools:context=".Activity.Sports">
+    tools:context=".Activity.KheladhulaActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

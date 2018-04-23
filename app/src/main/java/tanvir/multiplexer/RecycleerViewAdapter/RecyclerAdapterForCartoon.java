@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import tanvir.multiplexer.ModelClass.Cartoon;
 import tanvir.multiplexer.R;
 
 /**
@@ -21,17 +22,17 @@ import tanvir.multiplexer.R;
 public class RecyclerAdapterForCartoon extends RecyclerView.Adapter<RecyclerAdapterForCartoon.RecyclerViewHolder> {
 
 
-    private int[] images = {R.drawable.shikkhya_sohayika_1, R.drawable.shikkhya_sohayika_2};
+
 
     Activity activity;
-    private ArrayList<String> data;
+    private ArrayList<Cartoon> cartoonArrayList;
 
 
-    public RecyclerAdapterForCartoon(Activity activity, ArrayList<String> data)
+    public RecyclerAdapterForCartoon(Activity activity, ArrayList<Cartoon> cartoonArrayList)
     {
 
         this.activity = activity;
-        this.data=data;
+        this.cartoonArrayList=cartoonArrayList;
     }
 
     @Override
@@ -49,10 +50,10 @@ public class RecyclerAdapterForCartoon extends RecyclerView.Adapter<RecyclerAdap
     public void onBindViewHolder(final RecyclerViewHolder holder, int position) {
 
 
-        holder. cartoonNewsTV.setText(data.get(position));
+        holder. cartoonNewsTV.setText(cartoonArrayList.get(position).getContentTitle());
 
         Glide.with(activity)
-                .load(images[position])
+                .load(cartoonArrayList.get(position).getImageUrl())
                 .into(holder.imageView);
 
 
@@ -60,7 +61,7 @@ public class RecyclerAdapterForCartoon extends RecyclerView.Adapter<RecyclerAdap
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return cartoonArrayList.size();
     }
 
 
