@@ -16,96 +16,103 @@
 
         <include
             android:id="@+id/toolbarlayoutinwallpaperBundle"
-            layout="@layout/toolbar_layout_in_wallpaper_bundle_activity"
-            />
+            layout="@layout/toolbar_layout_in_wallpaper_bundle_activity" />
 
 
     </android.support.design.widget.AppBarLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_below="@id/appbarLayoutInWallpaperBundle"
-        android:padding="7dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:src="@drawable/kheladhula_2"
-            android:scaleType="centerCrop"
-            android:layout_width="match_parent"
-            android:layout_height="330dp" />
-
-        <TextView
-
-            android:textSize="28sp"
-            android:text="বিস্তারিত"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_marginTop="12dp"
-            android:textSize="@dimen/textSize"
-            android:text="ক্রিকেট দুনিয়ার নানান ধরনের দারুন সব খবর নিয়ে আমাদের এই আয়োজন"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
 
         <LinearLayout
-            android:gravity="bottom|end"
-            android:layout_marginTop="18dp"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appbarLayoutInWallpaperBundle"
+            android:orientation="vertical"
+            android:padding="7dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="330dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/kheladhula_2" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="বিস্তারিত"
+                android:textSize="28sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="ক্রিকেট দুনিয়ার নানান ধরনের দারুন সব খবর নিয়ে আমাদের এই আয়োজন"
+                android:textSize="@dimen/textSize" />
 
             <LinearLayout
-                android:layout_gravity="center"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_marginTop="5dp"
-                    android:text="বিশেষ অফার"
-                    android:textColor="@color/red"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="bottom|end"
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/strikeThroughInWallPaperBundle"
-                        android:text="৳১৫"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="বিশেষ অফার"
+                        android:textColor="@color/red" />
 
-                    <TextView
-                        android:layout_marginLeft="10dp"
-                        android:text="৳১০"
-                        android:textColor="@color/green"
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/strikeThroughInWallPaperBundle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="৳১৫" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="৳১০"
+                            android:textColor="@color/green" />
+
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
 
-
-
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/btn_style_red"
+                    android:text="কিনুন / ডাউনলোড করুন"
+                    android:textColor="@color/White" />
             </LinearLayout>
 
-            <Button
-                android:layout_marginLeft="10dp"
-                android:text="কিনুন / ডাউনলোড করুন"
-                android:textColor="@color/White"
-                android:background="@drawable/btn_style_red"
-                android:layout_width="match_parent"
-                android:layout_height="70dp" />
+
         </LinearLayout>
 
 
+    </ScrollView>
 
-    </LinearLayout>
 
 </RelativeLayout>

@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.goodiebag.pinview.Pinview
+   <!-- <com.goodiebag.pinview.Pinview
         android:layout_marginTop="60dp"
         android:id="@+id/pinview"
         android:layout_width="match_parent"
@@ -43,7 +43,44 @@
         app:forceKeyboard="true"
         app:hint="0"
         app:inputType="number"
-        app:password="false"/>
+        app:password="false"/>-->
+
+    <requestFocus/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupInPinActivity"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/firstRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/dark_red"/>
+
+        <RadioButton
+            android:id="@+id/secondRadioButton"
+            android:buttonTint="@color/dark_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/thirdRadioButton"
+            android:buttonTint="@color/dark_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/fourthRadioButton"
+            android:buttonTint="@color/dark_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </RadioGroup>
 
     <Button
 

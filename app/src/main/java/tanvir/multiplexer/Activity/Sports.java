@@ -6,21 +6,19 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
 import tanvir.multiplexer.Fragment.Cricket_fragment;
 import tanvir.multiplexer.Fragment.Football_fragment;
 import tanvir.multiplexer.Fragment.other_sports_fragment;
 import tanvir.multiplexer.R;
-import tanvir.multiplexer.ViewpagerAdapter.ViewPagerAdapter;
+import tanvir.multiplexer.ViewpagerAdapter.ViewPagerAdapterForSports;
 
 public class Sports extends AppCompatActivity {
 
     private android.support.v7.widget.Toolbar toolbar;
     TabLayout tabLayout;
     ViewPager viewPager;
-    ViewPagerAdapter viewPagerAdapter;
+    ViewPagerAdapterForSports viewPagerAdapterForSports;
 
     Context context;
 
@@ -38,15 +36,15 @@ public class Sports extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPagerInSports);
 
-        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        viewPagerAdapterForSports = new ViewPagerAdapterForSports(getSupportFragmentManager());
         viewPager.setOffscreenPageLimit(3);
 
-        viewPagerAdapter.addFragments(new Cricket_fragment(), "ক্রিকেট");
-        viewPagerAdapter.addFragments(new Football_fragment(), "ফুটবল");
-        viewPagerAdapter.addFragments(new other_sports_fragment(), "অন্যান্য");
+        viewPagerAdapterForSports.addFragments(new Cricket_fragment(), "ক্রিকেট");
+        viewPagerAdapterForSports.addFragments(new Football_fragment(), "ফুটবল");
+        viewPagerAdapterForSports.addFragments(new other_sports_fragment(), "অন্যান্য");
 
 
-        viewPager.setAdapter(viewPagerAdapter);
+        viewPager.setAdapter(viewPagerAdapterForSports);
 
         tabLayout.setupWithViewPager(viewPager);
 

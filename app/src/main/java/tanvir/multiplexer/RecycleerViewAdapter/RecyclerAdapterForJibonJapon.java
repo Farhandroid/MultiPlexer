@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import tanvir.multiplexer.ModelClass.JibonJapon;
 import tanvir.multiplexer.R;
 
 /**
@@ -21,17 +22,17 @@ import tanvir.multiplexer.R;
 public class RecyclerAdapterForJibonJapon extends RecyclerView.Adapter<RecyclerAdapterForJibonJapon.RecyclerViewHolder> {
 
 
-    private int[] images = {R.drawable.shikkhya_sohayika_1, R.drawable.shikkhya_sohayika_2};
+    ///private int[] images = {R.drawable.shikkhya_sohayika_1, R.drawable.shikkhya_sohayika_2};
 
     Activity activity;
-    private ArrayList<String> data;
+    private ArrayList<JibonJapon> jibonJaponArrayList;
 
 
-    public RecyclerAdapterForJibonJapon(Activity activity, ArrayList<String> data)
+    public RecyclerAdapterForJibonJapon(Activity activity, ArrayList<JibonJapon> jibonJaponArrayList)
     {
 
         this.activity = activity;
-        this.data=data;
+        this.jibonJaponArrayList=jibonJaponArrayList;
     }
 
     @Override
@@ -49,10 +50,10 @@ public class RecyclerAdapterForJibonJapon extends RecyclerView.Adapter<RecyclerA
     public void onBindViewHolder(final RecyclerViewHolder holder, int position) {
 
 
-        holder.JibonJaponNewsTV.setText(data.get(position));
+        holder.JibonJaponNewsTV.setText(jibonJaponArrayList.get(position).getContentTitle());
 
         Glide.with(activity)
-                .load(images[position])
+                .load(jibonJaponArrayList.get(position).getImageUrl())
                 .into(holder.imageView);
 
 
@@ -60,7 +61,7 @@ public class RecyclerAdapterForJibonJapon extends RecyclerView.Adapter<RecyclerA
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return jibonJaponArrayList.size();
     }
 
 

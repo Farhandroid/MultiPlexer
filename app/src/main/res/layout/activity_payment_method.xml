@@ -89,7 +89,7 @@
                     android:background="@color/White"
                     android:padding="15dp"
                     android:scaleType="centerInside"
-                    android:src="@drawable/maxis" />
+                    android:src="@drawable/maxis_logo" />
 
 
             </LinearLayout>

@@ -103,8 +103,8 @@ public class HomePage extends AppCompatActivity {
         japitoJibonMCArrayList = new ArrayList<>();
         mulloCharArrayList = new ArrayList<>();
         gamesZoneArrayList = new ArrayList<>();
-        shocolChobiArrayList=new ArrayList<>();
-        shikkhaSohaYikaArrayList=new ArrayList<>();
+        shocolChobiArrayList = new ArrayList<>();
+        shikkhaSohaYikaArrayList = new ArrayList<>();
 
         ///Bottom navigation
 
@@ -124,7 +124,7 @@ public class HomePage extends AppCompatActivity {
 
     private void loadDataFromVolley() {
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, Endpoints.HOME_GET_URL,
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, Endpoints.UPDATED_HOME_GET_URL,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -177,7 +177,7 @@ public class HomePage extends AppCompatActivity {
                     String contentTitle = shocol_chobi__content_arr.getJSONObject(i).getString("contentTitle");
                     String contentType = shocol_chobi__content_arr.getJSONObject(i).getString("contentType");
 
-                    shocolChobiArrayList.add(new ShocolChobi(contentType,contentUrl,contentTitle));
+                    shocolChobiArrayList.add(new ShocolChobi(contentType, contentUrl, contentTitle));
 
                 } catch (JSONException e) {
 
@@ -235,13 +235,13 @@ public class HomePage extends AppCompatActivity {
                 try {
                     String contentTitle = shikkha_sohayika__content_arr.getJSONObject(i).getString("contentTitle");
                     String contentType = shikkha_sohayika__content_arr.getJSONObject(i).getString("contentType");
-                    String imageUrl = shikkha_sohayika__content_arr.getJSONObject(i).getString("image_url");
+                    String imageUrl = shikkha_sohayika__content_arr.getJSONObject(i).getString("thumbNail_image");
 
                     if (contentType.equals("video")) {
                         String contentUrl = shikkha_sohayika__content_arr.getJSONObject(i).getString("contentUrl");
-                        shikkhaSohaYikaArrayList.add(new ShikkhaSohaYika(contentType,contentUrl,contentTitle,imageUrl));
+                        shikkhaSohaYikaArrayList.add(new ShikkhaSohaYika(contentType, contentUrl, contentTitle, imageUrl));
                     } else {
-                        shikkhaSohaYikaArrayList.add(new ShikkhaSohaYika(contentType,"",contentTitle,imageUrl));
+                        shikkhaSohaYikaArrayList.add(new ShikkhaSohaYika(contentType, "", contentTitle, imageUrl));
                     }
 
                 } catch (JSONException e) {
@@ -406,7 +406,7 @@ public class HomePage extends AppCompatActivity {
 
     public void startJibonJaponActivity(View view) {
 
-        Intent myIntent = new Intent(getApplicationContext(), JibonJapon.class);
+        Intent myIntent = new Intent(getApplicationContext(), JibonJaponActivity.class);
         myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         this.startActivity(myIntent);
         overridePendingTransition(R.anim.left_in, R.anim.left_out);
@@ -529,8 +529,7 @@ public class HomePage extends AppCompatActivity {
 
     }
 
-    public void initializeShocolChobiRecyclerview()
-    {
+    public void initializeShocolChobiRecyclerview() {
         //Recyclerview for ShocholChobi
 
         recyclerViewForShocolChobi = findViewById(R.id.RV_ShocolChobi);
@@ -542,13 +541,12 @@ public class HomePage extends AppCompatActivity {
         snapHelperStartShocolChobi.attachToRecyclerView(recyclerViewForShocolChobi);
 
         recyclerViewForShocolChobi.setHasFixedSize(true);
-        adapterForShocolChobi = new RecyclerAdapterForShocolChobi(this,shocolChobiArrayList);
+        adapterForShocolChobi = new RecyclerAdapterForShocolChobi(this, shocolChobiArrayList);
 
         recyclerViewForShocolChobi.setAdapter(adapterForShocolChobi);
     }
 
-    public void initializeShikkhaSohayikaRecyclerview()
-    {
+    public void initializeShikkhaSohayikaRecyclerview() {
         //Recyclerview for ShikkhaSohayika
 
         recyclerViewForShikkhaSohayika = findViewById(R.id.RV_ShikkhaSohayika);
@@ -563,6 +561,27 @@ public class HomePage extends AppCompatActivity {
         adapterForShikkhaSohayika = new RecyclerAdapterForShikkhaSohayika(this, shikkhaSohaYikaArrayList);
 
         recyclerViewForShikkhaSohayika.setAdapter(adapterForShikkhaSohayika);
+
+    }
+
+    public void startGoromKhoborPage(View view) {
+        Intent myIntent = new Intent(getApplicationContext(), GoromKhoborActivity.class);
+        myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        this.startActivity(myIntent);
+        overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        finish();
+
+    }
+
+    public void startGalleryActivity(View view) {
+
+        Intent galleryIntent = new Intent(getApplicationContext(), GalleryActivity.class);
+        galleryIntent.putStringArrayListExtra("galleryImageData",topContentImages);
+        galleryIntent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        this.startActivity(galleryIntent);
+        overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        finish();
+
 
     }
 }

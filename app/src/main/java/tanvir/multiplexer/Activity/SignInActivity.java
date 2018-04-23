@@ -71,7 +71,8 @@ public class SignInActivity extends AppCompatActivity {
 
 
 
-        checkCredintial();
+        ///checkCredintial();
+        homePageStart();
 
     }
 

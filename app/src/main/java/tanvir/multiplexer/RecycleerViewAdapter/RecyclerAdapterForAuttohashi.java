@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import tanvir.multiplexer.ModelClass.Auttohashi;
 import tanvir.multiplexer.R;
 
 /**
@@ -21,17 +22,17 @@ import tanvir.multiplexer.R;
 public class RecyclerAdapterForAuttohashi extends RecyclerView.Adapter<RecyclerAdapterForAuttohashi.RecyclerViewHolder> {
 
 
-    private int[] images = {R.drawable.shikkhya_sohayika_1, R.drawable.shikkhya_sohayika_2};
+    ///private int[] images = {R.drawable.shikkhya_sohayika_1, R.drawable.shikkhya_sohayika_2};
 
     Activity activity;
-    private ArrayList<String> data;
+    private ArrayList<Auttohashi> auttohashiArrayList;
 
 
-    public RecyclerAdapterForAuttohashi(Activity activity, ArrayList<String> data)
+    public RecyclerAdapterForAuttohashi(Activity activity, ArrayList<Auttohashi> auttohashiArrayList)
     {
 
         this.activity = activity;
-        this.data=data;
+        this.auttohashiArrayList=auttohashiArrayList;
     }
 
     @Override
@@ -49,18 +50,16 @@ public class RecyclerAdapterForAuttohashi extends RecyclerView.Adapter<RecyclerA
     public void onBindViewHolder(final RecyclerViewHolder holder, int position) {
 
 
-        holder.auttohashiNewsTV.setText(data.get(position));
+        holder.auttohashiNewsTV.setText(auttohashiArrayList.get(position).getContentTitle());
 
         Glide.with(activity)
-                .load(images[position])
+                .load(auttohashiArrayList.get(position).getImageUrl())
                 .into(holder.imageView);
-
-
     }
 
     @Override
     public int getItemCount() {
-        return images.length;
+        return auttohashiArrayList.size();
     }
 
 
@@ -73,11 +72,8 @@ public class RecyclerAdapterForAuttohashi extends RecyclerView.Adapter<RecyclerA
         public RecyclerViewHolder(View view)
         {
             super(view);
-
-
             imageView =  view.findViewById(R.id.imgauttohashi);
             auttohashiNewsTV=view.findViewById(R.id.auttohashiNewsTV);
-
         }
     }
 

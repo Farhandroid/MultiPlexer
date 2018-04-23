@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import tanvir.multiplexer.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
     private android.support.v7.widget.Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +20,8 @@ public class SignUpActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbarlayoutinsign);
         setSupportActionBar(toolbar);
+
+
 
 
     }

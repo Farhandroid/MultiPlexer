@@ -104,6 +104,8 @@
                         android:orientation="horizontal">
 
                         <LinearLayout
+                            android:clickable="true"
+                            android:onClick="startGoromKhoborPage"
                             android:layout_width="@dimen/item_width_home_page"
                             android:layout_height="@dimen/item_hight_home_page"
                             android:layout_marginTop="5dp"
@@ -343,6 +345,8 @@
                         android:textSize="17sp" />
 
                     <TextView
+                        android:clickable="true"
+                        android:onClick="startGalleryActivity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
